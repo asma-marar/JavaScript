@@ -116,3 +116,7 @@ function comparitive(sent2, specific2) {
 }
 
 console.log(comparitive("Coding Academy by Orange", "o")); // Output: 2
+
+
+//9
+for (i=0 ;i<20; i++)
