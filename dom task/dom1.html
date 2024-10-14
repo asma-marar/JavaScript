@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.index-text {
+    width: 50%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+
+    </style>
+</head>
+<body>
+    <form id="formIme" class="index-text">
+        <label for="fname">User Name</label>
+        <input type="text" id="fname" required>
+        <span class="required-message"></span>
+        <br>
+    
+        <label for="lname">Password</label>
+        <input type="password" id="lname" required>
+        <span class="required-message1"></span>
+        <br>
+        <label for="wname">Confirm Password</label>
+        <input type="password" id="wname" required>
+        <span class="required-message2"></span>
+        <br>
+        <br>
+        <button type="submit" id="registerButton" disabled>Register</button>
+        <span id="correct"></span>
+    </form>
+    
+
+
+<script src="./dom1.js"></script>
+
+</body>
+</html>

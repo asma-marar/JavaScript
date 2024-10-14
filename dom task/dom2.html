@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    p {
+      white-space: pre-line; /* لضمان ظهور الجمل كل واحدة في سطر */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercise: Manipulating Text</h1>
+  <p id="paragraph">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias vel corporis at! Culpa minima eos odio velit? Laboriosam, eaque! Ad facere nostrum, est dolores esse velit perspiciatis impedit nemo corporis.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad assumenda repellendus nihil quo fuga dolorum, illum cum repudiandae obcaecati dignissimos aut blanditiis. Impedit nisi repellat quia optio consequatur quos distinctio.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsum quis perferendis officiis excepturi molestiae quam laudantium iste? Eaque dolor vitae possimus libero? Ex cum fugiat tempora sint natus nostrum.
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam maxime, nesciunt amet laborum, unde dignissimos nobis nam doloremque doloribus cum recusandae, sapiente exercitationem facilis officia dolorem aliquid voluptatem? Mollitia, fuga?
+  </p>
+
+  <div id="wordCount"></div> <!-- سيتم عرض عدد الكلمات هنا -->
+  
+  
+  <script>
+    // Exercise 01: Highlight words over 8 characters long
+    const paragraph = document.getElementById('paragraph');
+    let paragraphText = paragraph.innerHTML;
+    
+    // تقسيم النص إلى كلمات والتحقق من الكلمات الأطول من 8 حروف
+   // تقسيم النص إلى كلمات
+let words = paragraphText.split(' ');
+
+// نبحث عن الكلمات التي أطول من 8 حروف
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > 8) {
+    // إذا كانت الكلمة أطول من 8 حروف، نضيف لها <span> مع لون خلفية
+    words[i] = `<span class="highlight">${words[i]}</span>`;
+  }
+}
+
+// إعادة تجميع الكلمات مع مسافات بينها
+paragraph.innerHTML = words.join(' ');
+
+
+    // Exercise 02: Add a link to the source
+    const link = document.createElement('a');
+    link.href = 'https://google.com/';
+    link.textContent = 'Source';
+    document.body.appendChild(link);
+
+    // Exercise 03: Split each sentence onto a new line
+    paragraphText = paragraph.innerHTML;
+    paragraph.innerHTML = paragraphText.split('. ').join('.\n');
+
+    // Exercise 04: Count the number of words in the paragraph
+// تقسيم النص إلى كلمات باستخدام المسافات
+let word = paragraphText.split(' ');
+
+// حساب عدد الكلمات عن طريق حلقة
+let wordCount = 0;
+for (let i = 0; i < word.length; i++) {
+  if (word[i].trim().length > 0) { // نتأكد أن الكلمة ليست فارغة
+    wordCount++;
+  }
+}
+
+// عرض عدد الكلمات في الصفحة
+document.getElementById('wordCount').textContent = 'Word Count: ' + wordCount;
+  </script>
+
+</body>
+</html>
